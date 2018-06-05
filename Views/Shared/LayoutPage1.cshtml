@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/styles/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    @Html.Partial("MyPartialView")
+    @Html.Action(controllerName: "Login", actionName: "Login")
+    @RenderBody()
+    <script src="~/Vendors/Jquery.js"></script>
+    <script src="~/app/disableLink.js"></script>
+</body>
+</html>
+
+

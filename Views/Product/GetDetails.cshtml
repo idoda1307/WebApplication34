@@ -1,0 +1,50 @@
+﻿@model WebApplication34.Models.ProductsModel
+
+@{
+    Layout = "~/Views/Shared/LayoutPage1.cshtml";
+    ViewBag.title = "Add Product";
+}
+
+<div id="myProductDiv">
+    @using (Html.BeginForm("GetDetails", "Product", FormMethod.Post, 
+        new { enctype = "multipart/form-data" }))
+    {
+        <fieldset id="myProductFieldset">
+            <legend>Add Product</legend>
+            @Html.ValidationSummary()
+            <br />
+                        @Html.LabelFor(p => p.title)
+            <br />
+                        @Html.EditorFor(p => p.title)
+            <br />
+                        @Html.LabelFor(p => p.price)
+            <br />
+                        @Html.EditorFor(p => p.price)
+            <br />
+                        @Html.LabelFor(p => p.shortDescription)
+            <br />
+                        @Html.EditorFor(p => p.shortDescription)
+            <br />
+                        @Html.LabelFor(p => p.longDescription)
+            <br />
+                        @Html.EditorFor(p => p.longDescription)
+            <br />
+            <div>
+                        @Html.LabelFor(p => p.image1)
+                        <input id="img1" name="img1" type="file" />
+                </div>
+            <br />
+            <div>
+                        @Html.LabelFor(p => p.image2)
+                        <input id="img2" name="img2" type="file" />
+                </div>
+            <br />
+            <div>
+                        @Html.LabelFor(p => p.image3)
+                        <input id="img3" name="img3" type="file" />
+                </div>
+            <br />
+            <input type="submit" id="productBtn" value="Add Product" />
+        </fieldset>
+    }
+</div>

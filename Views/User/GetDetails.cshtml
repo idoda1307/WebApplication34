@@ -1,0 +1,80 @@
+﻿@model WebApplication34.Models.UsersModel
+
+@{
+    Layout = "~/Views/Shared/LayoutPage1.cshtml";
+    if (Request.Cookies["userName"] != null && Request.Cookies["userName"].Value != null)
+    {
+        ViewBag.title = "User Details";
+    }
+    else
+    {
+        ViewBag.title = "Register";
+    }
+}
+@if (Request.Cookies["userName"] == null || Request.Cookies["userName"].Value == null)
+{
+using (Html.BeginForm())
+{
+    <fieldset id="myFieldset">
+        <legend>Please Enter Your Details</legend>
+        @Html.ValidationSummary()
+        <br />
+        @Html.LabelFor(u => u.firstName)
+        <br />
+        @Html.EditorFor(u => u.firstName)
+        <br />
+        @Html.LabelFor(u => u.lastName)
+        <br />
+        @Html.EditorFor(u => u.lastName)
+        <br />
+        @Html.LabelFor(u => u.birthDate)
+        <br />
+        @Html.EditorFor(u => u.birthDate)
+        <br />
+        @Html.LabelFor(u => u.email)
+        <br />
+        @Html.EditorFor(u => u.email)
+        <br />
+        @Html.LabelFor(u => u.userName)
+        <br />
+        @Html.EditorFor(u => u.userName)
+        <br />
+        @Html.LabelFor(u => u.password)
+        <br />
+        @Html.EditorFor(u => u.password)
+        <br />
+        @Html.LabelFor(u => u.passwordValidiation)
+        <br />
+        @Html.EditorFor(u => u.passwordValidiation)
+        <br />
+        <input type="submit" value="Create Account" />
+    </fieldset>
+}
+}
+else
+{
+    <div id="userDetails">
+        @Html.DisplayNameFor(u => u.firstName)
+        @Html.DisplayFor(u => u.firstName)
+        <br />
+        @Html.DisplayNameFor(u => u.lastName)
+        @Html.DisplayFor(u => u.lastName)
+        <br />
+        @Html.DisplayNameFor(u => u.birthDate)
+        @Html.DisplayFor(u => u.birthDate)
+        <br />
+        @Html.DisplayNameFor(u => u.email)
+        @Html.DisplayFor(u => u.email)
+        <br />
+        @Html.DisplayNameFor(u => u.userName)
+        @Html.DisplayFor(u => u.userName)
+        <br />
+        @Html.DisplayNameFor(u => u.password)
+        @Html.DisplayFor(u => u.password)
+        <br />
+        <button disabled id="updateBtn">Update</button>
+    </div>
+}
+
+
+

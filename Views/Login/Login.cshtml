@@ -1,0 +1,37 @@
+﻿@model WebApplication34.Models.UserLogin
+
+
+@if (Request.Cookies["userName"] != null && Request.Cookies["userName"].Value != null)
+{
+
+    <div class="btn-group-vertical">
+        <h2>Welcome @Request.Cookies["userName"].Value</h2>
+        <br />
+        <a id="loginBtn" href=@Url.Action(actionName:"GetDetails",controllerName:"Product")
+           class="btn btn-primary">
+            Add Products
+        </a>
+        <a href=@Url.Action(actionName:"Logout",controllerName:"Login")
+           class="btn btn-primary">
+            Logout
+        </a>
+    </div>
+}
+else
+{
+    <div id="myLeftDiv">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            <br />
+            @Html.LabelFor(l => l.userName)
+            @Html.EditorFor(l => l.userName)
+            <br />
+                @Html.LabelFor(l => l.password)
+                @Html.EditorFor(l => l.password)
+                <button id="myBtn" type="submit">Sign In</button>
+        }
+    </div>
+}
+
+

@@ -1,0 +1,31 @@
+﻿<nav class="navbar navbar-inverse nav-justified nav-pills navbar-form">
+    <div class="container-fluid" id="myMenu">
+        <div class="navbar-header">
+            <a href='@Url.Action(actionName:"Index",controllerName:"Home")' class="navbar-brand">
+                <img id="imgLogo" src="~/images/logo.png" alt="Yad 3" />
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li>
+            @if (Request.Cookies["userName"] != null && Request.Cookies["userName"].Value != null)
+                {
+                    <a href=@Url.Action(actionName:"GetDetails", controllerName: "User",routeValues: new {id= Request.Cookies["userName"].Value })>User Details</a>
+                }
+                else
+                {
+                    <a href=@Url.Action(actionName:"GetDetails", controllerName: "User")>Sign Up</a>
+                }
+            </li>
+            <li>
+                <a href=@Url.Action(actionName:"Index",controllerName:"About")>About</a>
+            </li>
+            <li>
+                <a href=@Url.Action(actionName:"Cart",controllerName:"ShoppingCart")>Shopping Cart</a>
+            </li>
+
+        </ul>
+        <span id="myTitle" class="nav navbar-nav navbar-right">@ViewBag.title</span>
+    </div>
+
+</nav>
+

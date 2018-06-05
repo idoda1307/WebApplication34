@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebApplication34.Models.ProductsModel>
+
+@{
+    Layout = "~/Views/Shared/LayoutPage1.cshtml";
+    ViewBag.title = "Home";
+}
+<div>
+    <button id="sortByName" class="btn btn-primary navbar-inverse sortButtons">@Html.ActionLink("Sort By Name", actionName: "SortByName", controllerName: "Home")</button>
+    <br />
+    <button id="sortByDate" class="btn btn-primary navbar-inverse sortButtons">@Html.ActionLink("Sort By Date", actionName: "SortByDate", controllerName: "Home")</button>
+</div>
+<div id="homeDiv">
+    @foreach (var product in Model)
+    {
+        <ul id="myProductList">
+            <li><h3 id="productTitle">@product.title</h3></li>
+            <li>
+                @Html.DisplayNameFor(p => p.price)
+                <span id="productPrice">@product.price</span>
+            </li>
+            @Html.DisplayNameFor(p => p.date)
+            <li>@product.date</li>
+            @if (product.image1 != null)
+            {
+            <li><img src="@product.image1" class="productImage"/></li>
+            }
+            <li><button id="addToCartBtn" class="btn btn-primary navbar-inverse">@Html.ActionLink("Add To Cart", actionName: "AddToCart", controllerName: "ShoppingCart", routeValues: new { id = product.ID }, htmlAttributes: null)</button></li>
+            <li><button id="moreDetailsBtn" class="btn btn-primary navbar-inverse">@Html.ActionLink("More Details", actionName: "MoreDetails", controllerName: "ProductDetails", routeValues: new { id = product.ID }, htmlAttributes: null)</button></li>
+        </ul>
+    }
+</div>
+

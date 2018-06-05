@@ -1,0 +1,48 @@
+﻿@model WebApplication34.Models.ProductsModel
+
+@{
+    Layout = "~/Views/Shared/LayoutPage1.cshtml";
+    ViewBag.title = "Product Details";
+}
+<div id="moreDetailsDiv">
+    <h1>
+        @Model.title
+    </h1>
+    <h2>
+        @Html.DisplayNameFor(p => p.price)
+        @Model.price
+    </h2>
+    <h2>
+        @Html.DisplayNameFor(p => p.date)
+        @Model.date
+    </h2>
+    <h3>
+        @Model.shortDescription
+    </h3>
+    <p>
+        @Model.longDescription
+    </p>
+    <p>
+        @if (Model.image1 != null)
+        {
+            <img src="@Model.image1" class="img-rounded"/>
+        }
+@if (Model.image2 != null)
+{
+        <img src="@Model.image2" class="img-rounded" />
+}
+@if (Model.image3 != null)
+{
+        <img src="@Model.image3" class="img-rounded" />
+}
+    </p>
+    <p>
+        @Model.owner.firstName @Model.owner.lastName
+        <br />
+        @Html.DisplayNameFor(u => u.owner.email)
+        @Model.owner.email
+    </p>
+    <button id="goBackBtn" class="btn">@Html.ActionLink("Add To Cart", actionName: "AddToCart", controllerName: "ShoppingCart", routeValues: new { id = Model.ID }, htmlAttributes: null)</button>
+</div>
+<button class="btn">@Html.ActionLink("Go Back", actionName: "Index", controllerName: "Home")</button>
+

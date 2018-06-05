@@ -1,0 +1,201 @@
+﻿.validation-summary-errors,.field-validation-error {
+            color: red;
+            list-style-type:none;
+        }
+
+        .input-validation-error {
+            border: 1px solid red;
+            background-color: #ffeeee;
+        }
+ul{
+    list-style-type:none;
+}
+#errorSection{
+    align-content:center;
+}
+#myList{
+    list-style-type: none;
+    font-size:30px;
+    
+}
+#helloDiv{
+    text-align:center;
+    font-size:30px;
+}
+#myTitle{
+    color:white;
+    font-size:40px;
+    font-weight:bold;
+    left:50%;
+}
+
+h1{
+    text-align:center;
+}
+#imgLogo{
+    height:35px;
+    width:80px;
+}
+#aboutPage{
+    margin: auto;
+    border: 3px solid green;
+    padding: 10px;
+    text-align: center;
+    font-size:25px;
+    font-family:Arial;
+    background-color:burlywood;
+}
+#myLeftDiv{
+    height:300px;
+    width:220px;
+    border:solid 5px black;
+    text-align:center;
+    background-color:aqua;
+    color:black;
+}
+#myRegisterDiv{
+    position:absolute;
+    margin-top:70px;
+    left:350px;
+}
+#myProductDiv{
+    position:absolute;
+    top:80px;
+    left:500px;
+}
+#myProductFieldset{
+    display: block;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border:1px solid black;
+    text-align: center;
+    margin:auto;
+    height:600px;
+    width:400px;
+
+}
+#addToCartBtn,#moreDetailsBtn{
+    width:100px;
+}
+#myFieldset,#userDiv { 
+    display: block;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border:1px solid black;
+    text-align: center;
+    margin:auto;
+    height:700px;
+    width:800px;
+}
+#userDetails{
+    left:300px;
+    font-size:30px;
+    top:80px;
+    height:600px;
+    position:absolute;
+    display: block;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border:1px solid black;
+    text-align: center;
+    margin:auto;
+    width:800px;
+    background-color:darkturquoise;
+}
+#myFieldset{
+   top:80px;
+   position:absolute;
+   left:450px;
+}
+#aboutDiv{
+    position:absolute;
+    top:80px;
+    left:280px;
+    height:70%;
+    width:75%;
+}
+#myUserTable,#myProductTable{
+    padding-right:20px;
+}
+tr,td{
+    margin-bottom:20px;
+}
+#myProductList{
+    height:350px;
+    width:220px;
+    border:1px solid black;
+    background-color:antiquewhite;
+    text-align:center;
+    display: inline-block;
+   vertical-align: top;
+   padding-left: 0;
+
+}
+#homeDiv{
+    margin-left:250px;
+    top:80px;
+    position:absolute;
+    display:inline-block;
+}
+#moreDetailsDiv{
+    left:400px;
+    top:80px;
+    position:absolute;
+    display: block;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border:1px solid black;
+    text-align: center;
+    margin:auto;
+    height:600px;
+    width:800px;
+    background-color:thistle;
+}
+.homeBtn{
+    font-weight:bold;
+    color:white;
+    text-align:center;
+    background-color:black;
+}
+.productImage{
+    height:50px;
+    width:50px;
+}
+#cartTable{
+    display: block;
+    padding:10px;
+    text-align: center;
+    margin:auto;
+    padding-right:200px;
+    font-size:30px;
+    top:100px;
+    margin-left:550px;
+    position:absolute;
+}
+#resDiv{
+    font-size:30px;
+    margin-left:550px;
+    position:absolute;
+    text-align: center;
+    margin:auto;
+    top:600px;
+}
+
+#noProducts{
+    top:100px;
+    left:500px;
+    font-size:40px;
+    position:absolute;
+}
+td,th {
+  padding: 50px 50px;
+  padding-right:30px;
+}

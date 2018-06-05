@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebApplication34.Models.ProductsModel>
+
+@{
+    Layout = "~/Views/Shared/LayoutPage1.cshtml";
+    ViewBag.title = "Shopping Cart";
+    var item = Session["cart"] as List<WebApplication34.Models.ProductsModel>;
+}
+@if (Model == null && item == null)
+{
+    <div id="noProducts">There arent any products in your cart</div>
+}
+else { 
+    <table id="cartTable">
+    <tr>
+        <th>
+
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Price
+        </th>
+    </tr>
+    @if (Request.Cookies["userName"] != null && Request.Cookies["userName"].Value != null)
+    {
+        if (Model != null)
+        {
+            foreach (var product in Model)
+            {
+            <tr class="myTr">
+                <td>
+                @Html.CheckBoxFor(p => product.isChecked, new { myid = product.ID, @class = "myCb" })    
+                </td>
+                <td id="titleRes">
+                    <a href=@Url.Action(actionName: "MoreDetails", controllerName: "ProductDetails", routeValues: new { id = product.ID })>@product.title</a>
+                </td>
+                <td class="priceRes">
+                    @product.price
+                </td>
+            </tr>
+            }
+        }
+    }
+    else
+    {
+        foreach (var product in item)
+        {
+            <tr class="myTr">
+                <td>
+                   @Html.CheckBoxFor(p => product.isChecked, new { myid = product.ID, @class = "myCb" })
+</td>
+                <td>
+                    <a href=@Url.Action(actionName: "MoreDetails", controllerName: "ProductDetails",routeValues: new { id = product.ID })>@product.title</a>    
+                </td>
+                      <td class ="priceRes" >
+                           @product.price
+                       </td >
+                   </tr >
+            }
+        }
+              
+</table>
+    <div id="resDiv">
+<span> Total Price: </span>
+    <span id="spanRes"> </span>
+        </div>
+<button id="buyAllBtn" class="btn">
+    @Html.ActionLink("Buy All", actionName: "BuyAllProducts", controllerName: "ShoppingCart")
+</button>
+}
